@@ -1,0 +1,20 @@
+server:
+  port: 7003
+eureka:
+  instance: # eureka实例
+    hostname: eureka2 # 定义Eureka实例所在的主机名
+  client:
+    # 关闭集群注册
+    fetch-registry: false # 从eureka中获取注册信息
+    register-with-eureka: false # 是否注册到Eureka
+    service-url:
+      defaultZone: http://admin:joliu@eureka:7001/eureka,http://admin:joliu@eureka1:7002/eureka,http://admin:joliu@eureka2:7003/eureka
+  server:
+    eviction-interval-timer-in-ms: 1000 # 设置清理时间间隔
+    enable-self-preservation: false # 关闭保护模式
+
+spring:
+  security:
+    user:
+      name: admin
+      password: joliu

@@ -1,0 +1,46 @@
+server:
+  port: 8082
+mybatis:
+  mapper-locations:
+    - classpath:mapping/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  application:
+    name: microcloud-provider-product
+
+#  security:
+#    user:
+#      name: admin
+#      password: joliu
+#      roles:
+#        - USER
+logging:
+  level:
+    top.ninwoo.mapper: debug
+
+# Eureka注册配置
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      # defaultZone: http://localhost:7001/eureka
+      # defaultZone: http://admin:joliu@localhost:7001/eureka # 加密码的连接方式
+      defaultZone: http://admin:joliu@eureka:7001/eureka,http://admin:joliu@eureka1:7002/eureka,http://admin:joliu@eureka2:7003/eureka
+
+  instance:
+    instance-id: microcloud-provider-product2
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔
+    lease-renewal-interval-in-seconds: 2 # 默认心跳间隔
+info:
+  app.name: microcloud-provider-product2
+  company.name: ninwoo
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$

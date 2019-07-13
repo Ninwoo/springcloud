@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microcloud-provider-product1" />
+        <module name="microcloud-security" />
+        <module name="microcloud-consumer" />
+        <module name="microcloud-eureka2" />
+        <module name="microcloud-eureka" />
+        <module name="microcloud-provider-product" />
+        <module name="microcloud-api" />
+        <module name="microcloud-eureka1" />
+        <module name="microcloud-provider-product2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microcloud-eureka (1)" target="1.8" />
+      <module name="microcloud-eureka (2)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
